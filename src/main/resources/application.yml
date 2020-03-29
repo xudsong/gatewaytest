@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: gateway-test
+
+    cloud:
+      gateway:
+        default-filters:
+        routes:
+      #用户系统
+        - id: user-test
+          uri: lb://user-test
+          predicates:
+            - Path=/user/**
